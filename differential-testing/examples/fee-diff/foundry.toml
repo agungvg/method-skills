@@ -1,0 +1,8 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+ffi = true
+# FFI is required for the reference-implementation test (test/DifferentialFFI.t.sol).
+# Never enable ffi on a project you do not fully control: vm.ffi runs arbitrary
+# local commands. Keep it in this example project only.

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slither-plugin-missing-setter-bound"
+version = "0.1.0"
+description = "Slither plugin detector: numeric setter parameter assigned to state without a range check"
+requires-python = ">=3.10"
+dependencies = ["slither-analyzer"]
+
+# Slither discovers plugins through this entry-point group (see
+# slither/__main__.py get_detectors_and_printers()). The name before `=`
+# is arbitrary; the value must be `module:make_plugin`.
+[project.entry-points."slither_analyzer.plugin"]
+missing-setter-bound = "slither_plugin_missing_setter_bound:make_plugin"
+
+[tool.setuptools]
+packages = ["slither_plugin_missing_setter_bound"]
